@@ -1,21 +1,28 @@
-# Chiropractico Rocha Website
+# Chiropractico Rocha
 
-This project provides a simple website for a chiropractic business. It allows visitors to book appointments and registered clients to log in and track their reward points.
+Simple chiropractic clinic booking app built with Node.js, Express and SQLite.
 
-## Features
+## Setup
 
-- Accessible HTML with semantic elements and labels
-- Simple registration and login system using cookies
-- Appointment booking form
-- Dashboard showing reward points
+```bash
+npm install
+cp .env.example .env
+```
 
-## Usage
+Edit `.env` with your own `JWT_SECRET` if desired. The database will be created automatically using `data/seed.sql`.
 
-1. Ensure Node.js is installed.
-2. Start the server:
-   ```bash
-   node server.js
-   ```
-3. Visit `http://localhost:3000` in your browser.
+Run the development server:
 
-Data is stored in JSON files under the `data` directory.
+```bash
+npm start
+```
+
+Visit `http://localhost:3000`.
+
+## Deployment
+
+The app is ready for Heroku. Ensure `Procfile` and environment variables are set.
+
+## API Examples (Insomnia)
+
+Import `docs/Insomnia_Export.json` into Insomnia to test the API endpoints.

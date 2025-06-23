@@ -1,0 +1,31 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "Chiropractico API"
+    },
+    {
+      "_id": "req_appointments_get",
+      "_type": "request",
+      "parentId": "wrk_1",
+      "name": "Get Appointments",
+      "method": "GET",
+      "url": "http://localhost:3000/api/appointments"
+    },
+    {
+      "_id": "req_appointments_post",
+      "_type": "request",
+      "parentId": "wrk_1",
+      "name": "Create Appointment",
+      "method": "POST",
+      "url": "http://localhost:3000/api/appointments",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"date\": \"2025-01-01\",\n  \"time\": \"09:00\",\n  \"reason\": \"Adjustment\"\n}"
+      }
+    }
+  ]
+}

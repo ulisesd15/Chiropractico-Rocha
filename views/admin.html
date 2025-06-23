@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Admin Panel</h1>
+      <div class="notification is-info">Total Revenue: $<%= revenue %></div>
+      <table class="table is-fullwidth">
+        <thead>
+          <tr><th>User</th><th>Date</th><th>Time</th><th>Reason</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+        <% appointments.forEach(a => { %>
+          <tr>
+            <td><%= a.username %></td>
+            <td><%= a.date %></td>
+            <td><%= a.time %></td>
+            <td><%= a.reason %></td>
+            <td><%= a.status %></td>
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
+      <p><a href="/logout">Logout</a></p>
+    </div>
+  </section>
+</body>
+</html>

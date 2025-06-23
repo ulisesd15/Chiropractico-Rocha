@@ -3,26 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Chiropractico Rocha</title>
-  <link rel="stylesheet" href="/public/styles.css">
+  <title>Register</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <header>
-    <h1>Register</h1>
-  </header>
-  <main>
-    <form action="/register" method="post">
-      <div>
-        <label for="username">Username</label>
-        <input id="username" name="username" required>
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" required>
-      </div>
-      <button type="submit" class="btn">Create Account</button>
-    </form>
-    <p><a href="/login">Already registered?</a></p>
-  </main>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Register</h1>
+      <form action="/register" method="post">
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control"><input class="input" type="text" name="username" required></div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control"><input class="input" type="password" name="password" required></div>
+        </div>
+        <div class="control"><button class="button is-primary" type="submit">Register</button></div>
+      </form>
+      <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+  </section>
 </body>
 </html>
