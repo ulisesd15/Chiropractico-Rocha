@@ -3,22 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Chiropractico Rocha</title>
-  <link rel="stylesheet" href="/public/styles.css">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="module" src="/js/appointments.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Dashboard</h1>
-    <nav>
-      <ul>
-        <li><a href="/appointments">Book Appointment</a></li>
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h2>Welcome, {{username}}</h2>
-    <p>Your reward points: <strong>{{rewards}}</strong></p>
-  </main>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Welcome, <span id="user-name"><%= username %></span></h1>
+      <p>Reward Points: <strong id="rewards"><%= rewards %></strong></p>
+
+      <div class="box">
+        <form id="appt-form">
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input class="input" type="date" name="date" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Time</label>
+            <div class="control">
+              <div class="select">
+                <select name="time" id="time-select"></select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Reason</label>
+            <div class="control">
+              <input class="input" type="text" name="reason" required>
+            </div>
+          </div>
+          <div class="control">
+            <button class="button is-primary" type="submit">Book</button>
+          </div>
+        </form>
+      </div>
+
+      <table class="table is-fullwidth" id="appointments-table">
+        <thead>
+          <tr><th>Date</th><th>Time</th><th>Reason</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <p><a href="/logout">Logout</a></p>
+    </div>
+  </section>
 </body>
 </html>
